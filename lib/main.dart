@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test/Cart.dart';
-import 'package:test/Drawer.dart';
+import 'package:test/login.dart';
 import 'package:test/Home.dart';
 import 'package:test/Profile.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,7 +8,8 @@ void main(){
   runApp(
     const MaterialApp(
       debugShowCheckedModeBanner: false, 
-      home: MyApp(),
+      // home: MyApp(),
+      home: LoginPage(),
   ),
   );
 }
@@ -24,9 +25,10 @@ class _MyAppState extends State<MyApp> {
   int currentIndex = 0;
   List<Widget> screens = [
     const HomeScreen(),
-    const ProfileScreen(),
     const CartScreen(),
-    const DrawerScreen(),
+    const ProfileScreen(),
+    
+    
   ];
 
   @override
@@ -54,12 +56,8 @@ class _MyAppState extends State<MyApp> {
         ],
 
       ),
-      drawer: Drawer(
-        child: DrawerScreen(),
-      ),
-      endDrawer: Drawer(
-
-      ),
+      drawer: Drawer(),
+      
         // child: Container(
         //   color: Colors.teal,
         //   width: double.infinity,
